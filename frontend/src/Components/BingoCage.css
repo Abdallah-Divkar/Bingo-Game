@@ -1,0 +1,64 @@
+.cage {
+    width: 120px;
+    height: 120px;
+    border: 8px solid #ccc;
+    border-top-color: #007bff;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .spinning {
+    animation: spin 1.5s linear infinite;
+  }
+  
+  /* Crossbars simulating cage wires */
+  .crossbar {
+    position: absolute;
+    background-color: #aaa;
+  }
+  
+  .crossbar.vertical {
+    width: 6px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .crossbar.horizontal {
+    height: 6px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  /* The bingo ball inside cage */
+  .ball {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+    box-shadow: 0 0 10px #007bff;
+    animation: ball-spin 1.5s linear infinite reverse;
+  }
+  
+  /* Keyframes */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes ball-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
