@@ -27,17 +27,39 @@ export default function App() {
     }
   };
   
+  // Function to reset the game state
+  const resetGame = async () => {
+    setCurrentNumber(null);
+    setAllNumbers([]);
+    setSpinning(false);
+    try {
+      await fetch("http://127.0.0.1:5000/reset", { method: "POST" });
+    } catch (error) {
+      console.error("Error resetting game:", error);
+    }
+  };
 
   return (
     <div style={{ textAlign: "center", padding: "2rem" }}>
       <h1>Bingo Game</h1>
-      <button onClick={drawNumber} disabled={spinning}>Draw Number</button>
+      <div style={{ marginBottom: "1rem" }}>
+        <button onClick={drawNumber} disabled={spinning}>Draw Number</button>
+        <button onClick={resetGame} disabled={spinning}>Reset Game</button>
+      </div>
   
       {/* Bingo cage with spinning animation */}
       <BingoCage spinning={spinning} />
   
-      <div style={{ margin: "2rem", fontSize: "6rem", fontWeight: "bold", color: "#007bff" }}>
-        {currentNumber ? <BingoBall number={currentNumber} /> : "Click Draw to start"}
+      <div style={{
+        margin: "2rem",
+        fontSize: "6rem",
+        fontWeight: "bold",
+        color: "#007bff",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
+        {currentNumber ? <BingoBall number={currentNumber} large={true} /> : "Click Draw to start"}
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px" }}>

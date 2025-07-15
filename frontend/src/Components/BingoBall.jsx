@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function BingoBall({ number, large }) {
+export default function BingoBall({ number, large = false }) {
   // Extract letter and digit parts
   const [letter, digit] = number.split("-");
 

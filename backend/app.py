@@ -34,5 +34,12 @@ def draw():
         "all_drawn_numbers": called_numbers
     })
 
+@app.route('/reset', methods=['POST'])
+def reset():
+    global called_numbers
+    called_numbers = []
+    return jsonify({"message": "Game has been reset."}), 200
+
+
 if __name__ == '__main__':
     app.run(debug=True)
