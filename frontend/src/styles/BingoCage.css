@@ -12,6 +12,21 @@
   .spinning {
     animation: spin 1.5s linear infinite;
   }
+  .cage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 240px;
+    height: 240px;
+  }
+  
+  .cage-image {
+    width: 240px;
+    height: 240px;
+    transition: transform 0.3s;
+  }
+  
   
   /* Crossbars simulating cage wires */
   .crossbar {

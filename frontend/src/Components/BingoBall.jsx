@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/BingoBall.css";
 
 export default function BingoBall({ number, large = false }) {
   // Extract letter and digit parts
@@ -17,23 +18,11 @@ export default function BingoBall({ number, large = false }) {
 
   return (
     <div
-      style={{
-        width: size,
-        height: size,
-        borderRadius: "50%",
-        backgroundColor: bgColor,
-        color: "white",
-        fontWeight: "bold",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        boxShadow: "0 0 8px rgba(0,0,0,0.3)",
-        userSelect: "none",
-      }}
+      className={`bingo-ball ${large ? "large" : ""}`}
+      style={{ backgroundColor: bgColor }}
     >
-      <div style={{ fontSize: "1rem" }}>{letter}</div>
-      <div style={{ fontSize: "1.5rem" }}>{digit}</div>
+      <div className="letter">{letter}</div>
+      <div className="digit">{digit}</div>
     </div>
   );
 }

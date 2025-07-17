@@ -1,0 +1,8 @@
+.game-status {
+    margin-top: 1rem;
+    color: green;
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+  }
+  

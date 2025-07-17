@@ -1,4 +1,20 @@
-import React, { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import DrawPage from "./pages/DrawPage";
+import GamePage from "./pages/GamePage";
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/draw" />} />
+      <Route path="/draw" element={<DrawPage />} />
+      <Route path="/game" element={<GamePage />} />
+    </Routes>
+  );
+}
+
+
+
+/*import React, { useState } from "react";
 import BingoBall from "./Components/BingoBall";
 import BingoCage from "./Components/BingoCage";
 import "./App.css";
@@ -47,7 +63,7 @@ export default function App() {
         <button onClick={resetGame} disabled={spinning}>Reset Game</button>
       </div>
   
-      {/* Bingo cage with spinning animation */}
+      {/* Bingo cage with spinning animation *//*}
       <BingoCage spinning={spinning} />
   
       <div style={{
@@ -70,4 +86,4 @@ export default function App() {
     </div>
   );
   
-}
+}*/

@@ -1,0 +1,35 @@
+.page-container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .page-title {
+    font-size:large;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .draw-controls {
+    margin-bottom: 1rem;
+  }
+  
+  .current-number-display {
+    margin: 2rem;
+    font-size: 6rem;
+    font-weight: bold;
+    color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .drawn-numbers-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+.button-group {
+    margin-top: 2rem;
+}
+  
